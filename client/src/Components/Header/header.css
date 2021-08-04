@@ -1,0 +1,22 @@
+#header {
+    display: absolute;
+    z-index: 99999;
+}
+
+h3 {
+    color: #AACCFF;
+    margin-bottom: 5px;
+    padding-top: 0.5%;
+    margin-left: 2%;
+}
+
+.bg {
+    background-color: #222233;
+    width: 100%;
+    margin: 0px;
+    background-size: contain;
+}
+
+#serverMessage {
+    color: white;
+}

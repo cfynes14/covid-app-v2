@@ -1,0 +1,14 @@
+p {
+    color: white;
+    text-align: right;
+}
+
+.headlineInfo {
+    color: white;
+    margin-left: 5%;
+    font-weight: 500;
+}
+
+  .headlineInfo span {
+    font-weight: 300;
+  }
