@@ -1,0 +1,68 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  
+  .modal-main {
+    position:fixed;
+    background: white;
+    border-radius: 5px;
+    width: 45%;
+    height: auto;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    z-index: 9999;
+  }
+  
+  .display-block {
+    display: block;
+  }
+  
+  .display-none {
+    display: none;
+  }
+
+  p {
+      color: black
+  }
+
+  .nationalStatTitle {
+    background-color: #222233;
+    padding: 3%;
+    border: white solid 1px;
+    border-radius: 5px;
+  }
+
+  .nationalStatTitle h3 {
+    color: #AACCFF;
+  }
+
+  .nationalStat{
+    text-align: left;
+    margin-left: 5%;
+    font-weight: 500;
+  }
+
+  .nationalStat span {
+    font-weight: 300;
+  }
+
+  .date {
+    font-weight: 400;
+  }
+
+  #modalButton {
+    margin-right: 0;
+    margin-left: 5%;
+  }
+
+  #modalButton > button {
+    margin-bottom: 0.5%;
+  }
+
+ 
