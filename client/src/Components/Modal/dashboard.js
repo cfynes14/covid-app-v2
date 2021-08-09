@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import './modal.css'
 import React from "react";
 
-import Modal from './Modal';
+import Modal from './modal';
 import InfoModal from './infoModal';
 
 
