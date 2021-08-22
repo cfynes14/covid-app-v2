@@ -20,8 +20,6 @@ app.use(cors({
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
-
 //get all local authority names
 app.get('/localAuthorities', (req, res) => {
     res.send(localAuthorities());
@@ -60,3 +58,5 @@ app.get('/getLAdata', async (req, res) => {
     res.status(404).send('Unable to find data')
   }
 })
+
+app.listen(port, () => console.log(`Listening on port ${port}`));
