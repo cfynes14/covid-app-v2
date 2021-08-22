@@ -51,8 +51,7 @@ app.get('/national', async (req, res) => {
 app.get('/getLAdata', async (req, res) => {
   let data = await localAuthorityData(req.query)
   if(data){
-    res.status(200)
-    res.send(data); 
+    res.status(200).send(data); 
   } else {
     console.log('nothing to return')
     res.status(404).send('Unable to find data')
