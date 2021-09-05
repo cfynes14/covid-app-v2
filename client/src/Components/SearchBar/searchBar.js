@@ -37,18 +37,15 @@ class SearchBar extends React.Component{
 
 
 handleLocationChange(){
-    console.log('handling location change')
     this.props.searchLocation(this.state.area);
 }
 
 handleGetLAInformation(){
-    console.log('handlingLA info')
     this.props.findInfo(this.state.area)
 }
 
 
 handleChange(e){   
-    console.log('handling change')
     this.setState({ area: e.target.value },() => {
         this.handleLocationChange()
         this.handleGetLAInformation()

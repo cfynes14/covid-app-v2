@@ -20,9 +20,7 @@ class Dashboard extends React.Component{
   }
 
   componentWillUnmount(){
-    console.log('dashboard unmounted')
     if (this.props.currentInfections === undefined) {
-      console.log('no national info')
       alert('Sorry, unable to access current statistics. Please try again later')
       return null
     } 
@@ -37,7 +35,6 @@ class Dashboard extends React.Component{
   };
 
   showInfo(){
-    console.log('showing info')
     this.setState({ infoShow: true });
   }
 

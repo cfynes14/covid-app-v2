@@ -19,7 +19,7 @@ class Card1 extends React.Component{
       }
 
       findInfo = async (location) => {
-          const response = await axios.get('http://localhost:5000/getLAdata', { params: {location}})
+          const response = await axios.get(`http://localhost/${process.env.PORT}/getLAdata`, { params: {location}})
           if (response.status !== 200){
             throw Error(response.message)
         } else {

@@ -23,8 +23,7 @@ class CurrentInfo extends React.Component{
 
 
     findTotal = async () => {
-        console.log('finding total')
-        const response = await axios.get('http://localhost:5000/national')
+        const response = await axios.get(`http://localhost:${process.env.PORT}/national`)
         console.log(response.status)
         if (response.status !== 200){
             alert('Sorry, currently able to access national information. Please try again later.')

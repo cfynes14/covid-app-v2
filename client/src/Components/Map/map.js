@@ -4,7 +4,7 @@ import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
 import axios from 'axios';
 
 import Header from '../Header/header'
-import Card1 from '../Card/card';
+import Card1 from '../Card/card'
 
 
 function Map() {
@@ -17,7 +17,7 @@ function Map() {
        
      const searchLocation = async (location) => {
         setLocation(location)
-        const response = await axios.get('http://localhost:5000/location', { params: {location} })
+        const response = await axios.get(`http://localhost:${process.env.PORT}/location`, { params: {location} })
         if (response.status !== 200){
             throw Error(response.message)
         } else {

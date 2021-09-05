@@ -12,7 +12,7 @@ const National = require('./server/utils/national');
 const localAuthorityData = require('./server/utils/localAuthorityData');
 
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: `http://localhost:${port}`,
   credentials: true
 }))
 
@@ -43,7 +43,6 @@ app.get('/national', async (req, res) => {
     res.status(200)
     res.send(data);
   } else {
-    console.log('nothing to return')
     res.status(404).send('Unable to find data')
   }
 })
@@ -53,7 +52,6 @@ app.get('/getLAdata', async (req, res) => {
   if(data){
     res.status(200).send(data); 
   } else {
-    console.log('nothing to return')
     res.status(404).send('Unable to find data')
   }
 })
