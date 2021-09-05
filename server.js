@@ -11,11 +11,8 @@ const Location = require('./server/utils/location');
 const National = require('./server/utils/national');
 const localAuthorityData = require('./server/utils/localAuthorityData');
 
-app.use(cors({
-  origin: `http://localhost:${port}`,
-  credentials: true
-}))
-
+app.use(cors())
+  
 app.use(express.static(path.join(__dirname, "client/build")));
 
 app.use(bodyParser.urlencoded({ extended: true }));
