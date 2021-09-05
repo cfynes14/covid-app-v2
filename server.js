@@ -16,7 +16,7 @@ app.use(cors({
   credentials: true
 }))
 
-app.use(express.static(path.join(__dirname, "client")));
+app.use(express.static(path.join(__dirname, "client/build")));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
