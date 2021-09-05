@@ -13,7 +13,7 @@ const localAuthorityData = require('./server/utils/localAuthorityData');
 
 app.use(cors())
   
-app.use(express.static(path.join(__dirname, "client/build")));
+// app.use(express.static(path.join(__dirname, "client/build")));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -35,7 +35,6 @@ app.get('/location', async (req, res) => {
 
 app.get('/national', async (req, res) => {
   let data = await National.daily()
-  console.log(data.status)
   if(data){
     res.status(200)
     res.send(data);

@@ -23,13 +23,11 @@ class CurrentInfo extends React.Component{
 
 
     findTotal = async () => {
-        const response = await axios.get(`http://localhost:${process.env.PORT}/national`)
-        console.log(response.status)
+        const response = await axios.get('/national')
         if (response.status !== 200){
             alert('Sorry, currently able to access national information. Please try again later.')
             return
         } else {
-            console.log(response)
             this.setState({ totalDeaths: response.data.data[0].deathsCumulative, 
                             totalInfections: response.data.data[0].casesCumulative,
                             newCases: response.data.data[0].casesDaily,

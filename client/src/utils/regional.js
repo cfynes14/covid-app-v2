@@ -1,21 +1,4 @@
 
-// const Regional = {
-//     search(){
-//         fetch("https://covid-19-uk-data-by-zt.p.rapidapi.com/GetUKRegionWiseData", {
-//         "method": "GET",
-//         "headers": {
-//             "x-rapidapi-key": "a43dcbe605mshbd9068b7ca09398p1b0658jsndae6b6dcb0f8",
-//             "x-rapidapi-host": "covid-19-uk-data-by-zt.p.rapidapi.com"
-//         }
-//     })
-//     .then(response => {
-//         console.log(response);
-//     })
-//     .catch(err => {
-//         console.error(err);
-//     });
-//     }
-// }
 
 const http = require("https");
 

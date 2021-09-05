@@ -16,8 +16,6 @@ const Location = {
         .then(jsonResponse => {
             let lng = jsonResponse.features[0].center[0];
             let lat = jsonResponse.features[0].center[1];
-            console.log(lat);
-            console.log(lng);
             return {lat, lng};
         }).catch(error => {
             console.log(error)
