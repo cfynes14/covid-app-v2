@@ -6,7 +6,7 @@ import axios from 'axios';
 import Header from '../Header/header'
 import Card1 from '../Card/card';
 
-function Map() {
+function Map(props) {
 
   const [map, setMap] = useState(null);
   const [locationVal, setLocation] = useState('');
@@ -36,9 +36,9 @@ function Map() {
 
         return(
         <div>
-          <Header />
+          <Header searchLocation={searchLocation} location={locationVal} findInfo={props.findInfo} regionalStats={props.regionalStats}/>
       <MapContainer id="mapContainer" zoomControl={false} center={[51.5074, .1278]} zoom={6.5} whenCreated={setMap}>
-            <Card1 searchLocation={searchLocation} location={locationVal}/>
+            <Card1 searchLocation={searchLocation} location={locationVal} findInfo={props.findInfo} regionalStats={props.regionalStats}/>
             <TileLayer
             url="https://api.maptiler.com/maps/uk-openzoomstack-road/256/{z}/{x}/{y}.png?key=X7qpq0iR5R376h5yMZXo" 
             attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'

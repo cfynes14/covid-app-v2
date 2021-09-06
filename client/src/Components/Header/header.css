@@ -20,3 +20,26 @@ h3 {
 #serverMessage {
     color: white;
 }
+
+
+@media screen and (max-width: 450px) {
+    #header{ 
+        display: block !important;
+        font-size: 0.75em;
+    }
+    .displayText {
+        float: none;
+        margin-left: 5%
+    }
+    #mobileSelect {
+        margin-top: 2%;
+        margin-left: 7%;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    #mobileSelect {
+        display: none !important; 
+    }
+}
+

@@ -14,3 +14,10 @@
 .cardInfo span {
     font-weight: 200;
 }
+
+@media screen and (max-width: 700px) {
+    .card {
+        display: none;
+    }
+}
+

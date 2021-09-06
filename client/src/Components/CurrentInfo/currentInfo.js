@@ -2,7 +2,7 @@ import React from 'react';
 import './currentInfo.css';
 import axios from 'axios';
 import CountUp from 'react-countup';
-import Dashboard from '../Modal/dashboard';
+import Dashboard from '../Modals/dashboard';
 
 class CurrentInfo extends React.Component{
     constructor(props){
@@ -62,7 +62,8 @@ class CurrentInfo extends React.Component{
                            totalDeaths={this.state.totalDeaths}
                            newCases={this.state.newCases}
                            newDeaths={this.state.newDeaths}
-                           cumFirstVaccinations={this.state.cumFirstVaccinations} cumSecondVaccinations={this.state.cumSecondVaccinations} firstVaccinationsDaily={this.state.firstVaccinationsDaily} secondVaccinationsDaily={this.state.secondVaccinationsDaily}>
+                           cumFirstVaccinations={this.state.cumFirstVaccinations} cumSecondVaccinations={this.state.cumSecondVaccinations} firstVaccinationsDaily={this.state.firstVaccinationsDaily} secondVaccinationsDaily={this.state.secondVaccinationsDaily}
+                           regionalStats={this.props.regionalStats}>
                 </Dashboard>
             </div>
         )
