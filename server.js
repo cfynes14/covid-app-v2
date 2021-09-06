@@ -32,15 +32,17 @@ app.get('/location', async (req, res) => {
 )
 
 //retrieve national data 
-
 app.get('/national', async (req, res) => {
-  let data = await National.daily()
-  if(data){
-    res.status(200)
-    res.send(data);
+  console.log("national")
+  let response = await National.daily()
+  console.log(response)
+  if(response.status === 200){
+    res.send(response)
   } else {
-    res.status(404).send('Unable to find data')
+    res.status(500).send()
   }
+  
+ // res.send({ status: response.status, data: response.data })
 })
 
 app.get('/getLAdata', async (req, res) => {

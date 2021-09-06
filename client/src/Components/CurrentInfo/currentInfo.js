@@ -23,21 +23,29 @@ class CurrentInfo extends React.Component{
 
 
     findTotal = async () => {
-        const response = await axios.get(`/national`)
-        if (response.status !== 200){
+
+        try {
+            const response = await axios.get(`/national`)
+            console.log(response)
+            console.log(response.data.status)
+            if (response.data.status === 200) {
+                this.setState({ totalDeaths: response.data.today.deathsCumulative, 
+                    totalInfections: response.data.today.casesCumulative,
+                    newCases: response.data.today.casesDaily,
+                    newDeaths: response.data.today.deathsDaily,
+                    cumFirstVaccinations: response.data.yesterday.firstVaccinationsCumulative,
+                    cumSecondVaccinations: response.data.yesterday.secondVaccinationsCumulative,
+                    firstVaccinationsDaily: response.data.yesterday.firstVaccinationsDaily,
+                    secondVaccinationsDaily: response.data.yesterday.secondVaccinationsDaily
+                })
+            } else {
+                alert('Sorry, currently able to access national information. Please try again later.')
+            }
+            
+        } catch(err) {
             alert('Sorry, currently able to access national information. Please try again later.')
             return
-        } else {
-            this.setState({ totalDeaths: response.data.data[0].deathsCumulative, 
-                            totalInfections: response.data.data[0].casesCumulative,
-                            newCases: response.data.data[0].casesDaily,
-                            newDeaths: response.data.data[0].deathsDaily,
-                            cumFirstVaccinations: response.data.data[1].firstVaccinationsCumulative,
-                            cumSecondVaccinations: response.data.data[1].secondVaccinationsCumulative,
-                            firstVaccinationsDaily: response.data.data[1].firstVaccinationsDaily,
-                            secondVaccinationsDaily: response.data.data[1].secondVaccinationsDaily
-                        })
-        }
+        }                   
     }
 
     componentDidMount() {
