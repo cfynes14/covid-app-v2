@@ -44,7 +44,7 @@ class Dashboard extends React.Component{
 
  render(){
       return (
-      <div id="modalButton" className="d-inline">
+      <div id="modalButton" className="d-flex">
       <Modal show={this.state.show} handleClose={this.hideModal} 
         children={{totalInfections: this.props.totalInfections.toLocaleString(), 
                    totalDeaths: this.props.totalDeaths.toLocaleString(),
@@ -59,8 +59,9 @@ class Dashboard extends React.Component{
       <InfoModal show={this.state.infoShow} handleClose={this.hideInfo}>
 
       </InfoModal>
-      <button className="btn btn-secondary" type="button" onClick={this.showModal}>More national info</button>
-      <button className="btn btn-secondary ml-4" type="button" onClick={this.showInfo}>App info</button>
+      <button id="la-button" className="dashButton btn btn-secondary">LA Info</button>
+      <button className="dashButton btn btn-secondary" type="button" onClick={this.showModal}>More national info</button>
+      <button className="dashButton btn btn-secondary" type="button" onClick={this.showInfo}>App info</button>
     </div>
   );
   }

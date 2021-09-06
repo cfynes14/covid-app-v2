@@ -23,7 +23,7 @@ class CurrentInfo extends React.Component{
 
 
     findTotal = async () => {
-        const response = await axios.get('/national')
+        const response = await axios.get(`/national`)
         if (response.status !== 200){
             alert('Sorry, currently able to access national information. Please try again later.')
             return
@@ -47,8 +47,8 @@ class CurrentInfo extends React.Component{
     render(){
         return(
             <div className="pr-4 pt-2">
-                <p className="headlineInfo mb-0 d-inline">Total infections in UK: <span><CountUp end={this.state.totalInfections} duration={0.5} separator=','/></span></p>
-                <p className="headlineInfo mb-0 d-inline">Total deaths in UK: <span><CountUp end={this.state.totalDeaths} duration={0.5} separator=','/></span></p>
+                <p className="headlineInfo mb-0 d-inline">Total infections: <span><CountUp end={this.state.totalInfections} duration={0.5} separator=','/></span></p>
+                <p className="headlineInfo mb-0 d-inline">Total deaths: <span><CountUp end={this.state.totalDeaths} duration={0.5} separator=','/></span></p>
 
                 <Dashboard totalInfections={this.state.totalInfections} 
                            totalDeaths={this.state.totalDeaths}
