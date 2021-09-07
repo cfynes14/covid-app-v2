@@ -23,6 +23,9 @@ h3 {
 
 
 @media screen and (max-width: 450px) {
+    h3 {
+        margin-right: 11%;
+    }
     #header{ 
         display: block !important;
         font-size: 0.75em;

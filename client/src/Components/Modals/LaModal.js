@@ -1,14 +1,13 @@
 import './modal.css';
-import formatDate from '../../utils/formatDate';
 
-const LaModal = ({ handleClose, show, children }) => {
+const LaModal = ({ handleClose, show, children, props }) => {
     const showHideClassName = show ? "modal display-block" : "modal display-none";
     
     return (
         <div className={showHideClassName}>
             <section className="modal-main">
                 <div className="nationalStatTitle">
-                     <h3>National Statistics for UK</h3>
+                     <h3>LA Statistics for </h3>
                 </div>
                 <br></br>
                 <p className="nationalStat">Total infections: <span>{children.cumCases.toLocaleString()}</span></p>

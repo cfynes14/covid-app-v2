@@ -26,8 +26,6 @@ class CurrentInfo extends React.Component{
 
         try {
             const response = await axios.get(`/national`)
-            console.log(response)
-            console.log(response.data.status)
             if (response.data.status === 200) {
                 this.setState({ totalDeaths: response.data.today.deathsCumulative, 
                     totalInfections: response.data.today.casesCumulative,
@@ -39,11 +37,11 @@ class CurrentInfo extends React.Component{
                     secondVaccinationsDaily: response.data.yesterday.secondVaccinationsDaily
                 })
             } else {
-                alert('Sorry, currently able to access national information. Please try again later.')
+                alert('Sorry, currently unable able to access national information. Please try again later.')
             }
             
         } catch(err) {
-            alert('Sorry, currently able to access national information. Please try again later.')
+            alert('Sorry, currently unable to access national information. Please try again later.')
             return
         }                   
     }
@@ -55,15 +53,18 @@ class CurrentInfo extends React.Component{
     render(){
         return(
             <div className="pr-4 pt-2">
-                <p className="headlineInfo mb-0 d-inline">Total infections: <span><CountUp end={this.state.totalInfections} duration={0.5} separator=','/></span></p>
-                <p className="headlineInfo mb-0 d-inline">Total deaths: <span><CountUp end={this.state.totalDeaths} duration={0.5} separator=','/></span></p>
+                    <p className="headlineInfo mb-0 d-inline">Total infections: <span><CountUp end={this.state.totalInfections} duration={0.5} separator=','/></span></p>
+                    <p className="headlineInfo mb-0 d-inline">Total deaths: <span><CountUp end={this.state.totalDeaths} duration={0.5} separator=','/></span></p>
+               
 
                 <Dashboard totalInfections={this.state.totalInfections} 
                            totalDeaths={this.state.totalDeaths}
                            newCases={this.state.newCases}
                            newDeaths={this.state.newDeaths}
                            cumFirstVaccinations={this.state.cumFirstVaccinations} cumSecondVaccinations={this.state.cumSecondVaccinations} firstVaccinationsDaily={this.state.firstVaccinationsDaily} secondVaccinationsDaily={this.state.secondVaccinationsDaily}
-                           regionalStats={this.props.regionalStats}>
+                           regionalStats={this.props.regionalStats}
+                           laLocation={this.props.laLocation}
+                           >    
                 </Dashboard>
             </div>
         )

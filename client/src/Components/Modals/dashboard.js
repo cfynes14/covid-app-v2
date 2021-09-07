@@ -22,12 +22,12 @@ class Dashboard extends React.Component{
     this.hideLaModal = this.hideLaModal.bind(this);
   }
 
-  componentWillUnmount(){
-    if (this.props.currentInfections === undefined) {
-      alert('Sorry, unable to access current statistics. Please try again later')
-      return null
-    } 
-  }
+  // componentWillUnmount(){
+  //   if (this.props.currentInfections === undefined) {
+  //     alert('Sorry, unable to access current statistics. Please try again later')
+  //     return null
+  //   } 
+  // }
   
   showModal(){
     this.setState({ show: true });
@@ -69,7 +69,7 @@ class Dashboard extends React.Component{
                  }}>
       </Modal>
       <LaModal show={this.state.laShow} handleClose={this.hideLaModal}
-        children={this.props.regionalStats}
+        children={this.props.regionalStats} laLocation={this.props.laLocation}
       >
                  
       </LaModal>
