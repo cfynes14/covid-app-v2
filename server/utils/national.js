@@ -12,15 +12,10 @@ const National = {
         
         const getData = async ( url ) => {
         
-            // const { data, status, statusText } = await axios.get(url, { timeout: 10000 });
-            // console.log(status)
-            // if ( status >= 400 )
-            //     throw new Error(statusText + status);
-        
-            // return data
             try {
                 return await axios.get(url, {timeout: 5000});                
             } catch(e) {
+                console.log("CAUGHT YOU")
                 return({status: 500, statusText: e.response.statusText})
             }        
         };  
@@ -29,17 +24,14 @@ const National = {
         const main = async () => {
         
         const result = await getData(endpoint);
-        console.log(result)
         if (result.status == 200){
-            console.log("yes")
             return {
                     status: 200, 
                     today: result.data.data[0],
                     yesterday: result.data.data[1]
                 }
-        } else {
+            } 
             return result
-        }
     };
       
     

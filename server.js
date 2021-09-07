@@ -33,10 +33,8 @@ app.get('/location', async (req, res) => {
 
 //retrieve national data 
 app.get('/national', async (req, res) => {
-  console.log("national")
   let response = await National.daily()
-  console.log(response)
-  if(response.status === 200){
+  if(response.status == 200 || response.status == 304){
     res.send(response)
   } else {
     res.status(500).send()
@@ -46,11 +44,11 @@ app.get('/national', async (req, res) => {
 })
 
 app.get('/getLAdata', async (req, res) => {
-  let data = await localAuthorityData(req.query)
-  if(data){
-    res.status(200).send(data); 
+  let response = await localAuthorityData(req.query)
+  if(response.status == 200){
+    res.send(response.data.data); 
   } else {
-    res.status(404).send('Unable to find data')
+    res.status(response.status).send(response.statusText)
   }
 })
 
