@@ -1,13 +1,13 @@
 import './modal.css';
 
-const LaModal = ({ handleClose, show, children, props }) => {
+const LaModal = ({ handleClose, show, children, laLocation }) => {
     const showHideClassName = show ? "modal display-block" : "modal display-none";
     
     return (
         <div className={showHideClassName}>
             <section className="modal-main">
                 <div className="nationalStatTitle">
-                     <h3>LA Statistics for </h3>
+                     <h3>LA Statistics for {laLocation}</h3>
                 </div>
                 <br></br>
                 <p className="nationalStat">Total infections: <span>{children.cumCases.toLocaleString()}</span></p>

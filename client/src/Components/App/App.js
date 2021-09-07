@@ -14,13 +14,11 @@ class App extends React.Component {
         cumDeaths: '',
         newCases: '',
         newDeaths: '',
-        laLocation: ''
     };
     this.findInfo = this.findInfo.bind(this)
   }
 
   findInfo = async (location) => {
-    this.setState({laLocation: location})
     try {
     const response = await axios.get(`/getLAdata`, { params: {location}})
   
@@ -35,7 +33,7 @@ class App extends React.Component {
       this.setState({ cumCases: response.data[0].cumCasesByPublishDate.toString(),
                       cumDeaths: response.data[0].cumDeaths28DaysByPublishDate.toString(), 
                       newCases: response.data[0].newCasesByPublishDate.toString(),
-                      newDeaths: response.data[0].newDeaths28DaysByPublishDate.toString() 
+                      newDeaths: response.data[0].newDeaths28DaysByPublishDate.toString(), 
                   })
   
 
