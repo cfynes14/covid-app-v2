@@ -27,14 +27,14 @@ class CurrentInfo extends React.Component{
         try {
             const response = await axios.get(`/national`)
             if (response.data.status === 200) {
-                this.setState({ totalDeaths: response.data.today.deathsCumulative, 
-                    totalInfections: response.data.today.casesCumulative,
-                    newCases: response.data.today.casesDaily,
-                    newDeaths: response.data.today.deathsDaily,
-                    cumFirstVaccinations: response.data.yesterday.firstVaccinationsCumulative,
-                    cumSecondVaccinations: response.data.yesterday.secondVaccinationsCumulative,
-                    firstVaccinationsDaily: response.data.yesterday.firstVaccinationsDaily,
-                    secondVaccinationsDaily: response.data.yesterday.secondVaccinationsDaily
+                this.setState({ totalDeaths: response.data.today.death, 
+                    totalInfections: response.data.today.confirmed,
+                    newCases: response.data.today.latestBy,
+                    newDeaths: response.data.today.deathNew,
+                    // cumFirstVaccinations: response.data.yesterday.firstVaccinationsCumulative,
+                    // cumSecondVaccinations: response.data.yesterday.secondVaccinationsCumulative,
+                    // firstVaccinationsDaily: response.data.yesterday.firstVaccinationsDaily,
+                    // secondVaccinationsDaily: response.data.yesterday.secondVaccinationsDaily
                 })
             } else {
                 alert('Sorry, currently unable able to access national information. Please try again later.')

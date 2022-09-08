@@ -30,10 +30,10 @@ class App extends React.Component {
           response.data[0][key] = "Waiting for up to date information"
         }
     }   
-      this.setState({ cumCases: response.data[0].cumCasesByPublishDate.toString(),
-                      cumDeaths: response.data[0].cumDeaths28DaysByPublishDate.toString(), 
-                      newCases: response.data[0].newCasesByPublishDate.toString(),
-                      newDeaths: response.data[0].newDeaths28DaysByPublishDate.toString(), 
+      this.setState({ cumCases: response.data[0].cumulativeCases.toString(),
+                      cumDeaths: response.data[0].cumulativeDeaths.toString(), 
+                      newCases: response.data[0].dailyCases.toString(),
+                      newDeaths: response.data[0].dailyDeaths.toString(), 
                   })
   
 

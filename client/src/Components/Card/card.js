@@ -17,8 +17,8 @@ import './card.css';
                     <div className="textInfo">
                     <p className="cardInfo">Total infections: <span><CountUp end={props.regionalStats.cumCases} duration={0.5} separator=','/></span></p>
                     <p className="cardInfo">Total deaths: <span><CountUp end={props.regionalStats.cumDeaths} duration={0.5} separator=','/></span></p>
-                    <p className="cardInfo">New cases on {formatDate((new Date(Date.now() - 86400000)).toISOString().split("T")[0])}: <span><CountUp end={props.regionalStats.newCases} duration={0.5} separator=','/></span></p>
-                    <p className="cardInfo">New deaths on {formatDate((new Date(Date.now() - 86400000)).toISOString().split("T")[0])}: <span><CountUp end={props.regionalStats.newDeaths} duration={0.5} separator=','/></span></p>
+                    <p className="cardInfo">New cases on {formatDate((new Date(Date.now() - 691200000)).toISOString().split("T")[0])}: <span><CountUp end={props.regionalStats.newCases} duration={0.5} separator=','/></span></p>
+                    <p className="cardInfo">New deaths on {formatDate((new Date(Date.now() - 691200000)).toISOString().split("T")[0])}: <span><CountUp end={props.regionalStats.newDeaths} duration={0.5} separator=','/></span></p>
                 </div>
                 </div>
             </div>            

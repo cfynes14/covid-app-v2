@@ -6,7 +6,7 @@ const National = {
         const endpoint = (
             'https://api.coronavirus.data.gov.uk/v1/data?%27%20+%20%27filters=areaType=nation;areaName=england;&%27%20+%20%27structure={%22date%22:%22date%22,%22newCases%22:%22newCasesByPublishDate%22}'
 
-            //
+            // "https://api.coronavirus.data.gov.uk/v1/data"
         );
         
         
@@ -15,7 +15,6 @@ const National = {
             try {
                 return await axios.get(url, {timeout: 5000});                
             } catch(e) {
-                console.log("CAUGHT YOU")
                 return({status: 500, statusText: e.response.statusText})
             }        
         };  

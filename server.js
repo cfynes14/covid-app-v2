@@ -39,13 +39,12 @@ app.get('/national', async (req, res) => {
   } else {
     res.status(500).send()
   }
-  
- // res.send({ status: response.status, data: response.data })
 })
 
 app.get('/getLAdata', async (req, res) => {
-  let response = await localAuthorityData(req.query)
+  const response = await localAuthorityData(req.query)
   if(response.status == 200){
+
     res.send(response.data.data); 
   } else {
     res.status(response.status).send(response.statusText)
