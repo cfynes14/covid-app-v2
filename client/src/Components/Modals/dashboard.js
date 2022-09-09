@@ -76,11 +76,9 @@ class Dashboard extends React.Component{
       <InfoModal show={this.state.infoShow} handleClose={this.hideInfo}>
 
       </InfoModal>
-      <div id="buttonContainer" className="container d-flex">
-        <button id="la-button" className="dashButton btn btn-secondary" type="button" onClick={this.showLaModal}>LA Info</button>
-        <button className="dashButton btn btn-secondary" type="button" onClick={this.showModal}>More national info</button>
-        <button className="dashButton btn btn-secondary" type="button" onClick={this.showInfo}>App info</button>
-      </div>
+      <button id="la-button" className="dashButton btn btn-secondary" type="button" onClick={this.showLaModal}>LA Info</button>
+      <button className="dashButton btn btn-secondary" type="button" onClick={this.showModal}>More national info</button>
+      <button className="dashButton btn btn-secondary" type="button" onClick={this.showInfo}>App info</button>
     </div>
   );
   }

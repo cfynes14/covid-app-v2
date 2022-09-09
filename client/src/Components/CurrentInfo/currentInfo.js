@@ -53,11 +53,8 @@ class CurrentInfo extends React.Component{
     render(){
         return(
             <div className="pr-4 pt-2">
-                <div id="totalContainer" className="container">
-                <p className="headlineInfo mb-0 d-inline">Total infections: <span><CountUp end={this.state.totalInfections} duration={0.5} separator=','/></span></p>
+                    <p className="headlineInfo mb-0 d-inline">Total infections: <span><CountUp end={this.state.totalInfections} duration={0.5} separator=','/></span></p>
                     <p className="headlineInfo mb-0 d-inline">Total deaths: <span><CountUp end={this.state.totalDeaths} duration={0.5} separator=','/></span></p>
-                </div>
-                    
                
 
                 <Dashboard totalInfections={this.state.totalInfections} 
